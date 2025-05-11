@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Insight</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class = "top-banner"> Insight </div>
+
+  <div class="instructions">
+    <h2 style="margin-bottom:0px">Find Your University</h2>
+    <h3>Input The following Data:</h3>
+  </div>
+
+
+  <div class="form-container">
+    <form method="post">
+
+      <label>State</label> <input type="text" name="state"><br>
+
+      <label for="location">Preferred Location:</label>
+      <select name="location" id="location">
+        <option value="any">Any</option>
+        <option value="urban">Urban</option>
+        <option value="suburban">Suburban</option>
+        <option value="small-city">Small City</option>
+        <option value="small-town">Small Town</option>
+      </select><br>
+
+      <label for="control">Preferred Control:</label>
+      <select name="control" id="control">
+        <option value="any">Any</option>
+        <option value="private">Private</option>
+        <option value="state">State</option>
+        <option value="city">City</option>
+        <option value="public">Public</option>
+      </select><br>
+
+      <label>SAT Verbal: </label> <input type="text" name="sat-verbal"><br>
+
+      <label>SAT Math: </label> <input type="text" name="sat-math"><br>
+
+      <label>Expenses (in thousands): </label> <input type="text" name="expenses"><br>
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <br>
+
+  {% if recommendations %}
+      <div class = "lower-banner">
+        <h2>Recommended Universities:</h2>
+      </div>
+      <br><br>
+      <table border="1">
+          <tr class = "column-names">
+              <th>Name</th>
+              <th>State</th>
+              <th>Control</th>
+              <th>Expenses</th>
+              <th>Student-Faculty Ratio</th>
+              <th>SAT Math</th>
+              <th>SAT Verbal</th>
+              <th>Academic Scale</th>
+              <th>Social Scale</th>
+              <th>Quality of Life Scale</th>
+          </tr>
+          {% for uni in recommendations %}
+          <tr>
+              <td>{{ uni['name'] }}</td>
+              <td>{{ uni['state'] }}</td>
+              <td>{{ uni['control'] }}</td>
+              <td>{{ uni['expenses'] }}</td>
+              <td>{{ uni['student:faculty'] }}</td>
+              <td>{{ uni['sat-math'] }}</td>
+              <td>{{ uni['sat-verbal'] }}</td>
+              <td>{{ uni['academics-scale:1-5'] }}</td>
+              <td>{{ uni['social-scale:1-5'] }}</td>
+              <td>{{ uni['quality-of-life-scale:1-5'] }}</td>
+          </tr>
+          {% endfor %}
+      </table>
+  {% endif %}
+
+</body>
+</html>
