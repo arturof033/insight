@@ -1,0 +1,21 @@
+student_id,university,sat_math,sat_verbal,expenses
+S001,Harvard,750,720,40000
+S002,Yale,730,710,39000
+S003,UC Berkeley,700,680,35000
+S004,University of Michigan,670,660,30000
+S005,UT Austin,660,640,25000
+S006,UCLA,680,670,34000
+S007,University of Florida,630,610,21000
+S008,University of Georgia,620,600,20000
+S009,Stanford,770,750,45000
+S010,MIT,780,760,47000
+S011,Purdue,650,630,27000
+S012,Ohio State,640,620,25000
+S013,University of Wisconsin,660,640,28000
+S014,Arizona State University,590,580,18000
+S015,Penn State,630,620,26000
+S016,University of Washington,680,660,32000
+S017,Caltech,790,770,50000
+S018,Duke,740,730,41000
+S019,University of North Carolina,670,650,29000
+S020,University of Illinois,660,640,27000
