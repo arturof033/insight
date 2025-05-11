@@ -2,7 +2,6 @@
 <br />
 <div align="center">
 <a href="https://github.com/arturof033/insight">
-  <img src="./img/playing_cards.svg" alt="Logo" height="60" style="filter: invert(1);">
 </a>
 
   <h3 align="center">Insight</h3>
