@@ -1,4 +1,4 @@
-student_id,university,sat_math,sat_verbal,expenses
+student_id,university,sat-math,sat-verbal,expenses
 S001,Harvard,750,720,40000
 S002,Yale,730,710,39000
 S003,UC Berkeley,700,680,35000
