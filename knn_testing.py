@@ -16,7 +16,7 @@ def evaluate_model(model, students, universities):
     total = len(students)
 
     for _, row in students.iterrows():
-        student_features = [[row['sat_verbal'], row['sat_math'], convert_expenses(row['expenses'])]]
+        student_features = [[row['sat-math'], row['sat-verbal'], convert_expenses(row['expenses'])]]
         distances, indices = model.kneighbors(student_features)
 
         recommended_unis = universities.iloc[indices[0]]['name'].tolist()
@@ -29,8 +29,8 @@ def evaluate_model(model, students, universities):
 
 if __name__ == "__main__":
     universities = pd.read_csv('universities.csv')
-    X = universities[['sat-verbal', 'sat-math', 'expenses']]
-    model = NearestNeighbors(n_neighbors=1)
+    X = universities[['sat-math', 'sat-verbal', 'expenses']]
+    model = NearestNeighbors(n_neighbors=5)
     model.fit(X)
 
     students = pd.read_csv('students.csv')
